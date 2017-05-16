@@ -8,6 +8,7 @@ buildscript {
 
 plugins {
     id 'org.springframework.boot' version '1.5.2.RELEASE'
+    id "com.gorylenko.gradle-git-properties" version "1.4.17"
     id 'java'
 }
 
@@ -19,6 +20,14 @@ jar {
     version =  '1.0.0-SNAPSHOT'
 }
 
+springBoot  {
+    buildInfo()
+}
+
+bootRepackage {
+    executable = true
+}
+
 repositories {
     mavenLocal()
     mavenCentral()
@@ -26,5 +35,6 @@ repositories {
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }

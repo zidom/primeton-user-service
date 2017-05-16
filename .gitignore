@@ -9,3 +9,6 @@ build
 .project
 .classpath
 target
+.gradle/
+.gradletasknamecache
+
