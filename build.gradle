@@ -16,11 +16,11 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 jar {
-    baseName = 'spring-boot-sample'
-    version =  '1.0.0-SNAPSHOT'
+    baseName = 'user-service'
+    version = '1.0.0-SNAPSHOT'
 }
 
-springBoot  {
+springBoot {
     buildInfo()
 }
 
@@ -36,5 +36,9 @@ repositories {
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.springframework.boot:spring-boot-starter-data-rest")
+    compile("com.h2database:h2")
+    compileOnly("org.projectlombok:lombok")
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
